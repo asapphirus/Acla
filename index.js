@@ -2,6 +2,7 @@ const express = require("express");
 
 const loginRoute = require("./routes/login");
 const callbackRoute = require("./routes/callback");
+const createSessionRoute = require("./routes/create-session");
 
 const app = express();
 
@@ -13,6 +14,7 @@ app.get("/", (req, res) => {
 
 app.use("/login", loginRoute);
 app.use("/callback", callbackRoute);
+app.use("/api/create-session", createSessionRoute);
 
 app.get("/privacy", (req, res) => {
     res.send(`
