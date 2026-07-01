@@ -8,12 +8,14 @@ const app = express();
 app.use(express.json());
 
 app.get("/", (req, res) => {
-    res.send("Servidor online!");
-});
-
-app.listen(process.env.PORT || 3000, () => {
-    console.log("Servidor iniciado!");
+    res.send("Server online!");
 });
 
 app.use("/login", loginRoute);
 app.use("/callback", callbackRoute);
+
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+    console.log(`Server in PORT: ${PORT}`);
+});
