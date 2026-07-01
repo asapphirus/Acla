@@ -14,6 +14,20 @@ app.get("/", (req, res) => {
 app.use("/login", loginRoute);
 app.use("/callback", callbackRoute);
 
+app.get("/privacy", (req, res) => {
+    res.send(`
+        <h1>Privacy Policy</h1>
+        <p>This application is used only for authentication in a private Roblox experience. No personal information is sold or shared with third parties.</p>
+    `);
+});
+
+app.get("/terms", (req, res) => {
+    res.send(`
+        <h1>Terms of Service</h1>
+        <p>This application is intended for use only with its associated Roblox experience. Use of this authentication service is voluntary.</p>
+    `);
+});
+
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
