@@ -14,7 +14,7 @@ app.get("/", (req, res) => {
 
 app.use("/login", loginRoute);
 app.use("/callback", callbackRoute);
-app.use("/api/create-session", createSessionRoute);
+app.use("/create-session", createSessionRoute);
 
 app.get("/privacy", (req, res) => {
     res.send(`
